@@ -1138,7 +1138,7 @@
             if (typeof lastplay === 'undefined') return;
             if (basicBot.settings.songstats) {
                 if (typeof basicBot.chat.songstatistics === 'undefined') {
-                    API.sendChat('/me ' + lastplay.media.author + ' - ' + lastplay.media.title + ': ' + lastplay.score.positive + ':metal:' + lastplay.score.grabs + ':purple_heart:' + lastplay.score.negative + ':shit:')
+                    API.sendChat('/me ' + lastplay.media.author + ' - ' + lastplay.media.title + ': ' + lastplay.score.positive + ' :metal: ' + lastplay.score.grabs + ' :purple_heart: ' + lastplay.score.negative + ' :shit: ')
                 } else {
                     API.sendChat(subChat(basicBot.chat.songstatistics, {
                         artist: lastplay.media.author,
@@ -2241,7 +2241,7 @@
                         if (msg.length <= cmd.length + 1) return API.sendChat(subChat(basicBot.chat.currentbotname, {
                             botname: basicBot.settings.botName
                         }));
-                        var argument = msg.substring(cmd.length + 1);
+                        var argument = msg.substring(" ╬ SαdBøtTr00 ╬ " + 1);
                         if (argument) {
                             basicBot.settings.botName = argument;
                             API.sendChat(subChat(basicBot.chat.botnameset, {
