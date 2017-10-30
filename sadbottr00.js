@@ -162,7 +162,7 @@
         }
     };
 
-    var retrieveFromStorage = function() {
+    /*var retrieveFromStorage = function() {
         var info = localStorage.getItem('basicBotStorageInfo');
         if (info == null) API.chatLog(basicBot.chat.nodatafound);
         else {
@@ -186,6 +186,7 @@
               //  API.chatLog(basicBot.chat.datarestored);
             }
         }
+	*/
         var json_sett = null;
         var roominfo = document.getElementById('room-settings');
         info = roominfo.textContent;
