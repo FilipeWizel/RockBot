@@ -268,7 +268,7 @@
         retrieveSettings: retrieveSettings,
         retrieveFromStorage: retrieveFromStorage,
         settings: {
-            botName: 'SadButTr00',
+            botName: '╬ SαdBøtTr00 ╬',
             language: 'portuguese',
             chatLink: 'https://rawgit.com/basicBot/source/master/lang/pt-BR.json',
             scriptLink: 'https://rawgit.com/basicBot/source/master/basicBot.js',
