@@ -7,7 +7,7 @@
 Crie um favorito no seu navegador com o nome RockBot, e no endereço (da página) cole o código abaixo: 
 
 ```
-javascript:(function(){$.getScript('https://cdn.rawgit.com/FilipeWizel/RockBot/e66bdca3/sadbottr00.js');})();
+javascript:(function(){$.getScript('https://rawgit.com/FilipeWizel/RockBot/master/sadbottr00.js');})();
 ```
 ### Comandos
 
