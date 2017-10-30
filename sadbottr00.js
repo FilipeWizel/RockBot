@@ -183,7 +183,7 @@
                 basicBot.room.messages = room.messages;
                 basicBot.room.queue = room.queue;
                 basicBot.room.newBlacklisted = room.newBlacklisted;
-                API.chatLog(basicBot.chat.datarestored);
+              //  API.chatLog(basicBot.chat.datarestored);
             }
         }
         var json_sett = null;
