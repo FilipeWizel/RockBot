@@ -327,13 +327,13 @@
             etaRestriction: false,
             welcome: true,
             opLink: null,
-            rulesLink: "goo.gl/WazWdA",
-            themeLink: "Permitido apenas sub-gêneros pertencentes ao Rock ou Heavy Metal. Veja mais em: goo.gl/RnDk25",
+            rulesLink: "http://goo.gl/WazWdA",
+            themeLink: "Rock, Heavy Metal e seus sub-gêneros. Veja mais em: http://goo.gl/RnDk25",
             fbLink: "https://www.facebook.com/groups/rockonlineplugdj/" ,
             youtubeLink: null,
             website: "https://www.facebook.com/groups/rockonlineplugdj/",
             intervalMessages: [],
-            messageInterval: 3,
+            messageInterval: 20,
             songstats: false, 
             commandLiteral: '!',
             blacklists: {
@@ -368,7 +368,7 @@
 					API.chatLog('!roletas');
 				}
 			},
-			automsgInterval: null,
+			automsgInterval: 20,
 			automsgFunc: function () {
 				if (basicBot.status && basicBot.settings.automsg) {
 					API.chatLog('!mensagens');
@@ -3673,12 +3673,13 @@
 					if (!basicBot.commands.executable(this.rank, chat)) return void (0);
 					else {
 					   var c, mensagens;
-					  mensagens = ["/me :+1: Entre para o nosso grupo no facebook: https://www.facebook.com/groups/ rockonlineplugdj/ ",
-                        "/me :warning: Veja nossas regras em: goo.gl/WazWdA",
+					  mensagens = ["/me :+1: Entre para o nosso grupo no facebook: https://www.facebook.com/groups/rockonlineplugdj/ ",
+                        "/me :warning: Veja nossas regras em: http://goo.gl/WazWdA",
                         "/me :busts_in_silhouette: Convide seus amigos para participarem da sala, e torna-la ainda melhor!",
                         "/me Continuem sempre tocando músicas tão boas :metal:",
                         "/me Não se esqueçam de voltar sempre à nossa sala :kissing_heart:",
-                        "/me Lembrem-se que o respeito vem sempre em primeiro lugar :v: :stuck_out_tongue_winking_eye:"];
+                        "/me Lembrem-se que o respeito vem sempre em primeiro lugar :v: :stuck_out_tongue_winking_eye:"
+						      ];
 					  c = Math.floor(Math.random() * mensagens.length);
 			  return API.sendChat(mensagens[c]);
 					 }
