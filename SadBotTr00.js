@@ -13,7 +13,7 @@
 /*
     Filipe Wizel - 2017 
 
-    RockBot foi personalizado usando como base o basicBot, tem como finalidade ser um bot com português como primeira lingua e personalizado para o uso da sala https://plug.dj/rockonline. 
+    ╬ SαdBøtTr00 ╬ foi personalizado usando como base o basicBot, tem como finalidade ser um bot com português como primeira lingua e personalizado para o uso da sala https://plug.dj/rockonline. 
     Em caso de dúvidas, reclamações ou outros interesses, favor entrar em contato via email com: wizel@metalfan.com.
 */
 
@@ -258,7 +258,7 @@
     var basicBot = {
         version: '666',
         status: false,
-        name: 'RockBot Tr00',
+        name: '╬ SαdBøtTr00 ╬',
         loggedInID: null,
         scriptLink: 'https://rawgit.com/basicBot/source/master/basicBot.js',
         cmdLink: 'http://git.io/245Ppg',
@@ -268,7 +268,7 @@
         retrieveSettings: retrieveSettings,
         retrieveFromStorage: retrieveFromStorage,
         settings: {
-            botName: 'RockBot Tr00',
+            botName: 'SadButTr00',
             language: 'portuguese',
             chatLink: 'https://rawgit.com/basicBot/source/master/lang/pt-BR.json',
             scriptLink: 'https://rawgit.com/basicBot/source/master/basicBot.js',
@@ -334,7 +334,7 @@
             website: "https://www.facebook.com/groups/rockonlineplugdj/",
             intervalMessages: [],
             messageInterval: 20,
-            songstats: false, 
+            songstats: true, 
             commandLiteral: '!',
             blacklists: {
                 NSFW: 'https://rawgit.com/basicBot/custom/master/blacklists/NSFWlist.json',
@@ -1137,7 +1137,7 @@
             if (typeof lastplay === 'undefined') return;
             if (basicBot.settings.songstats) {
                 if (typeof basicBot.chat.songstatistics === 'undefined') {
-                    API.sendChat('/me ' + lastplay.media.author + ' - ' + lastplay.media.title + ': ' + lastplay.score.positive + 'W/' + lastplay.score.grabs + 'G/' + lastplay.score.negative + 'M.')
+                    API.sendChat('/me ' + lastplay.media.author + ' - ' + lastplay.media.title + ': ' + lastplay.score.positive + ':metal:' + lastplay.score.grabs + ':purple_heart:' + lastplay.score.negative + ':shit:')
                 } else {
                     API.sendChat(subChat(basicBot.chat.songstatistics, {
                         artist: lastplay.media.author,
@@ -3898,7 +3898,7 @@
                     if (this.type === 'exact' && chat.message.length !== cmd.length) return void(0);
                     if (!basicBot.commands.executable(this.rank, chat)) return void(0);
                     else {
-                        API.sendChat('/me O RockBot foi criado usando como base os códigos do basicBot, veja mais sobre seu projeto em: https://github.com/basicBot/source');
+                        API.sendChat('/me O ╬ SαdBøtTr00 ╬  foi criado usando como base os códigos do basicBot, veja mais sobre seu projeto em: https://github.com/basicBot/source');
                     }
                 }
             },
