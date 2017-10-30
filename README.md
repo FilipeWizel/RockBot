@@ -4,7 +4,7 @@
 
 ### Script de uso
 
-Crie um favorito no seu navegador com o nome RockBot, e no endereço (da página) o código abaixo: 
+Crie um favorito no seu navegador com o nome RockBot, e no endereço (da página) cole o código abaixo: 
 
 ```
 javascript:(function(){$.getScript('https://rawgit.com/FilipeWizel/RockBot/master/rockBot.js');})();
