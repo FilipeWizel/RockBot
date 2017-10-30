@@ -2,8 +2,11 @@
 
  Copyright © 2014-2017 basicBot
 
- Modifications (including forks) of the code to fit personal needs are allowed only for personal use and should refer back to the original source.
- This software is not for profit, any extension, or unauthorised person providing this software is not authorised to be in a position of any monetary gain from this use of this software. Any and all money gained under the use of the software (which includes donations) must be passed on to the original author.
+ Modifications (including forks) of the code to fit personal needs are allowed only for personal use and should 
+ refer back to the original source.
+ This software is not for profit, any extension, or unauthorised person providing this software is not authorised 
+ to be in a position of any monetary gain from this use of this software. Any and all money gained under the use 
+ of the software (which includes donations) must be passed on to the original author.
 
  */
 
@@ -1484,8 +1487,12 @@
             },
             spam: [
                 'hueh', 'hu3', 'brbr', 'heu', 'brbrbr', 'spoder', 'mafia', 'zuera', 'zueira',
-                'zueria', 'aehoo', 'aheu', 'brazil', 'zoeira', 'fuckadmins', 'affff', 'hitler', 'ashua', 'ahsu', 'ashau', 'lulz', 'huehue', 'hue', 'huehuehue', 'merda', 'puta', 'retarda', 'caralho', 'ppk',
-                'fuder', 'foder', 'hua', 'ahue', 'modafuka', 'modafoka', 'mudafuka', 'mudafoka', 'ooooooooooooooo', 'foda', 'foda-se', 'cu', 'cú', 'pau', 'piroca', 'viado', 'vaca', 'vadia', 'piranha', 'fuck', 'buceta', 'masturbar', 'gozar', 'gozo', 'gozada', 'nudes', 'porno', 'sexo', 'anal', 'pozer', 'poser', 'bolsonaro', 'lula', 'dilma', 'aecio', 'temer', 'lixo', 'safada', 'porca', 'porco', 'anal', 'anus'
+                'zueria', 'aehoo', 'aheu', 'brazil', 'zoeira', 'fuckadmins', 'affff', 'hitler', 
+		'ashua', 'ahsu', 'ashau', 'lulz', 'huehue', 'hue', 'huehuehue', 'merda', 'puta', 'retarda', 'caralho', 'ppk',
+                'fuder', 'foder', 'hua', 'ahue', 'modafuka', 'modafoka', 'mudafuka', 'mudafoka', 'ooooooooooooooo', 'foda', 
+		'foda-se', 'cu', 'cú', 'pau', 'piroca', 'viado', 'vaca', 'vadia', 'piranha', 'fuck', 
+		'buceta', 'masturbar', 'gozar', 'gozo', 'gozada', 'nudes', 'porno', 'sexo', 'anal', 'pozer', 
+		'poser', 'bolsonaro', 'lula', 'dilma', 'aecio', 'temer', 'lixo', 'safada', 'porca', 'porco', 'anal', 'anus'
             ],
             curses: [
                 'nigger', 'faggot', 'nigga', 'niqqa', 'motherfucker', 'modafocka', 'preto', "filho da puta", "tomar no cu"
@@ -3666,11 +3673,9 @@
 					if (!basicBot.commands.executable(this.rank, chat)) return void (0);
 					else {
 					   var c, mensagens;
-					  mensagens = ["/me São permitidos apenas músicas de Rock e Heavy Metal :metal:",
-                        "/me O tempo limite das músicas é de 10 minutos :notes:",
-                        "/me :+1: Entre para o nosso grupo no facebook: https://www.facebook.com/groups/ rockonlineplugdj/ ",
+					  mensagens = ["/me :+1: Entre para o nosso grupo no facebook: https://www.facebook.com/groups/ rockonlineplugdj/ ",
                         "/me :warning: Veja nossas regras em: goo.gl/WazWdA",
-                        "/me Convide seus amigos para participarem da sala, e torna-la ainda melhor!",
+                        "/me :busts_in_silhouette: Convide seus amigos para participarem da sala, e torna-la ainda melhor!",
                         "/me Continuem sempre tocando músicas tão boas :metal:",
                         "/me Não se esqueçam de voltar sempre à nossa sala :kissing_heart:",
                         "/me Lembrem-se que o respeito vem sempre em primeiro lugar :v: :stuck_out_tongue_winking_eye:"];
