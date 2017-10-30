@@ -1,12 +1,6 @@
 ![Rock Online Bot](https://i.imgur.com/Q7P44gA.png)
 
-#RockBot Tr00
-
-### Clique e arraste
-
-Clique no link a seguir e arreste-o para seus favoritos:
-
-[RockBot](javascript:(function(){$.getScript('https://rawgit.com/FilipeWizel/RockBot/master/rockBot.js');})();)
+# RockBot Tr00
 
 ### Script de uso
 
