@@ -2,15 +2,18 @@
 
  Copyright © 2014-2017 basicBot
 
- Modifications (including forks) of the code to fit personal needs are allowed only for personal use and should refer back to the original source.
- This software is not for profit, any extension, or unauthorised person providing this software is not authorised to be in a position of any monetary gain from this use of this software. Any and all money gained under the use of the software (which includes donations) must be passed on to the original author.
+ Modifications (including forks) of the code to fit personal needs are allowed only for personal use and should 
+ refer back to the original source.
+ This software is not for profit, any extension, or unauthorised person providing this software is not authorised 
+ to be in a position of any monetary gain from this use of this software. Any and all money gained under the use 
+ of the software (which includes donations) must be passed on to the original author.
 
  */
 
 /*
     Filipe Wizel - 2017 
 
-    RockBot foi personalizado usando como base o basicBot, tem como finalidade ser um bot com português como primeira lingua e personalizado para o uso da sala https://plug.dj/rockonline. 
+    ╬ SαdBøtTr00 ╬ foi personalizado usando como base o basicBot, tem como finalidade ser um bot com português como primeira lingua e personalizado para o uso da sala https://plug.dj/rockonline. 
     Em caso de dúvidas, reclamações ou outros interesses, favor entrar em contato via email com: wizel@metalfan.com.
 */
 
@@ -119,7 +122,7 @@
 
     var loadChat = function(cb) {
         if (!cb) cb = function() {};
-        $.get('https://rawgit.com/basicBot/source/master/lang/pt-BR.json', function(json) {
+        $.get('https://rawgit.com/basicBot/source/master/lang/langIndex.json', function(json) {
             var link = basicBot.chatLink;
             if (json !== null && typeof json !== 'undefined') {
                 langIndex = json;
@@ -255,7 +258,7 @@
     var basicBot = {
         version: '666',
         status: false,
-        name: 'RockBot Tr00',
+        name: '╬ SαdBøtTr00 ╬',
         loggedInID: null,
         scriptLink: 'https://rawgit.com/basicBot/source/master/basicBot.js',
         cmdLink: 'http://git.io/245Ppg',
@@ -265,7 +268,7 @@
         retrieveSettings: retrieveSettings,
         retrieveFromStorage: retrieveFromStorage,
         settings: {
-            botName: 'RockBot Tr00',
+            botName: '╬ SαdBøtTr00 ╬',
             language: 'portuguese',
             chatLink: 'https://rawgit.com/basicBot/source/master/lang/pt-BR.json',
             scriptLink: 'https://rawgit.com/basicBot/source/master/basicBot.js',
@@ -324,14 +327,14 @@
             etaRestriction: false,
             welcome: true,
             opLink: null,
-            rulesLink: "goo.gl/WazWdA",
-            themeLink: "Permitido apenas sub-gêneros pertencentes ao Rock ou Heavy Metal. Veja mais em: goo.gl/RnDk25",
+            rulesLink: "http://goo.gl/WazWdA",
+            themeLink: "Rock, Heavy Metal e seus sub-gêneros. Veja mais em: http://goo.gl/RnDk25",
             fbLink: "https://www.facebook.com/groups/rockonlineplugdj/" ,
             youtubeLink: null,
             website: "https://www.facebook.com/groups/rockonlineplugdj/",
             intervalMessages: [],
-            messageInterval: 3,
-            songstats: false, 
+            messageInterval: 20,
+            songstats: true, 
             commandLiteral: '!',
             blacklists: {
                 NSFW: 'https://rawgit.com/basicBot/custom/master/blacklists/NSFWlist.json',
@@ -365,7 +368,7 @@
 					API.chatLog('!roletas');
 				}
 			},
-			automsgInterval: null,
+			automsgInterval: 20,
 			automsgFunc: function () {
 				if (basicBot.status && basicBot.settings.automsg) {
 					API.chatLog('!mensagens');
@@ -620,23 +623,20 @@
                 var u;
                 if (typeof obj === 'object') u = obj;
                 else u = API.getUser(obj);
-                for (var i = 0; i < botCreatorIDs.length; i++) {
-					if (botCreatorIDs[i].indexOf(u.id) > -1) return 10;
-				}
-				if (u.gRole < 2) return u.role;
-				else {
-					switch (u.gRole) {
-						case 2:
-							return 7;
-						case 3:
-							return 8;
-						case 4:
-							return 9;
-						case 5:
-							return 10;
-					}
-				}
-				return 0;
+                if (botCreatorIDs.indexOf(u.id) > -1) return 9999;
+
+                if (u.gRole == 0) return u.role;
+                else {
+                    switch (u.gRole) {
+                        case 3:
+                        case 3000:
+                            return (1*(API.ROLE.HOST-API.ROLE.COHOST))+API.ROLE.HOST;
+                        case 5:
+                        case 5000:
+                            return (2*(API.ROLE.HOST-API.ROLE.COHOST))+API.ROLE.HOST;
+                    }
+                }
+                return 0;
             },
             moveUser: function(id, pos, priority) {
                 var user = basicBot.userUtilities.lookupUser(id);
@@ -1137,7 +1137,7 @@
             if (typeof lastplay === 'undefined') return;
             if (basicBot.settings.songstats) {
                 if (typeof basicBot.chat.songstatistics === 'undefined') {
-                    API.sendChat('/me ' + lastplay.media.author + ' - ' + lastplay.media.title + ': ' + lastplay.score.positive + 'W/' + lastplay.score.grabs + 'G/' + lastplay.score.negative + 'M.')
+                    API.sendChat('/me ' + lastplay.media.author + ' - ' + lastplay.media.title + ': ' + lastplay.score.positive + ':metal:' + lastplay.score.grabs + ':purple_heart:' + lastplay.score.negative + ':shit:')
                 } else {
                     API.sendChat(subChat(basicBot.chat.songstatistics, {
                         artist: lastplay.media.author,
@@ -1487,8 +1487,12 @@
             },
             spam: [
                 'hueh', 'hu3', 'brbr', 'heu', 'brbrbr', 'spoder', 'mafia', 'zuera', 'zueira',
-                'zueria', 'aehoo', 'aheu', 'brazil', 'zoeira', 'fuckadmins', 'affff', 'hitler', 'ashua', 'ahsu', 'ashau', 'lulz', 'huehue', 'hue', 'huehuehue', 'merda', 'puta', 'retarda', 'caralho', 'ppk',
-                'fuder', 'foder', 'hua', 'ahue', 'modafuka', 'modafoka', 'mudafuka', 'mudafoka', 'ooooooooooooooo', 'foda', 'foda-se', 'cu', 'cú', 'pau', 'piroca', 'viado', 'vaca', 'vadia', 'piranha', 'fuck', 'buceta', 'masturbar', 'gozar', 'gozo', 'gozada', 'nudes', 'porno', 'sexo', 'anal', 'pozer', 'poser', 'bolsonaro', 'lula', 'dilma', 'aecio', 'temer', 'lixo', 'safada', 'porca', 'porco', 'anal', 'anus'
+                'zueria', 'aehoo', 'aheu', 'brazil', 'zoeira', 'fuckadmins', 'affff', 'hitler', 
+		'ashua', 'ahsu', 'ashau', 'lulz', 'huehue', 'hue', 'huehuehue', 'merda', 'puta', 'retarda', 'caralho', 'ppk',
+                'fuder', 'foder', 'hua', 'ahue', 'modafuka', 'modafoka', 'mudafuka', 'mudafoka', 'ooooooooooooooo', 'foda', 
+		'foda-se', 'cu', 'cú', 'pau', 'piroca', 'viado', 'vaca', 'vadia', 'piranha', 'fuck', 
+		'buceta', 'masturbar', 'gozar', 'gozo', 'gozada', 'nudes', 'porno', 'sexo', 'anal', 'pozer', 
+		'poser', 'bolsonaro', 'lula', 'dilma', 'aecio', 'temer', 'lixo', 'safada', 'porca', 'porco', 'anal', 'anus'
             ],
             curses: [
                 'nigger', 'faggot', 'nigga', 'niqqa', 'motherfucker', 'modafocka', 'preto', "filho da puta", "tomar no cu"
@@ -1621,7 +1625,7 @@
 			}, 30 * 60 * 1000);
 			basicBot.room.automsg = setInterval(function () {
 				basicBot.room.automsgFunc();
-			}, 8 * 60 * 1000);
+			}, 20 * 60 * 1000);
             basicBot.loggedInID = API.getUser().id;
             basicBot.status = true;
             API.sendChat('/cap ' + basicBot.settings.startupCap);
@@ -3669,14 +3673,13 @@
 					if (!basicBot.commands.executable(this.rank, chat)) return void (0);
 					else {
 					   var c, mensagens;
-					  mensagens = ["/me São permitidos apenas músicas de Rock e Heavy Metal :metal:",
-                        "/me O tempo limite das músicas é de 10 minutos :notes:",
-                        "/me :+1: Entre para o nosso grupo no facebook: https://www.facebook.com/groups/ rockonlineplugdj/ ",
-                        "/me :warning: Veja nossas regras em: goo.gl/WazWdA",
-                        "/me Convide seus amigos para participarem da sala, e torna-la ainda melhor!",
+					  mensagens = ["/me :+1: Entre para o nosso grupo no facebook: https://www.facebook.com/groups/rockonlineplugdj/ ",
+                        "/me :warning: Veja nossas regras em: http://goo.gl/WazWdA",
+                        "/me :busts_in_silhouette: Convide seus amigos para participarem da sala, e torna-la ainda melhor!",
                         "/me Continuem sempre tocando músicas tão boas :metal:",
                         "/me Não se esqueçam de voltar sempre à nossa sala :kissing_heart:",
-                        "/me Lembrem-se que o respeito vem sempre em primeiro lugar :v: :stuck_out_tongue_winking_eye:"];
+                        "/me Lembrem-se que o respeito vem sempre em primeiro lugar :v: :stuck_out_tongue_winking_eye:"
+						      ];
 					  c = Math.floor(Math.random() * mensagens.length);
 			  return API.sendChat(mensagens[c]);
 					 }
@@ -3895,7 +3898,7 @@
                     if (this.type === 'exact' && chat.message.length !== cmd.length) return void(0);
                     if (!basicBot.commands.executable(this.rank, chat)) return void(0);
                     else {
-                        API.sendChat('/me O RockBot foi criado usando como base os códigos do basicBot, veja mais sobre seu projeto em: https://github.com/basicBot/source');
+                        API.sendChat('/me O ╬ SαdBøtTr00 ╬  foi criado usando como base os códigos do basicBot, veja mais sobre seu projeto em: https://github.com/basicBot/source');
                     }
                 }
             },
@@ -4656,5 +4659,5 @@
     };
 
     loadChat(basicBot.startup);
-    $.getScript("https://moveit-brasil.github.io/bot/entrada.js");
+    // $.getScript("https://moveit-brasil.github.io/bot/entrada.js");
 }).call(this);
