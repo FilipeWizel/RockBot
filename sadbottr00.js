@@ -259,7 +259,7 @@
     var basicBot = {
         version: '666',
         status: false,
-        name: '╬ SαdBøtTr00 ╬',
+        name: " ╬ SαdBøtTr00 ╬ ",
         loggedInID: null,
         scriptLink: 'https://rawgit.com/basicBot/source/master/basicBot.js',
         cmdLink: 'http://git.io/245Ppg',
@@ -269,7 +269,7 @@
         retrieveSettings: retrieveSettings,
         retrieveFromStorage: retrieveFromStorage,
         settings: {
-            botName: '╬ SαdBøtTr00 ╬',
+            botName: " ╬ SαdBøtTr00 ╬ ",
             language: 'portuguese',
             chatLink: 'https://rawgit.com/basicBot/source/master/lang/pt-BR.json',
             scriptLink: 'https://rawgit.com/basicBot/source/master/basicBot.js',
@@ -323,7 +323,7 @@
             afkRankCheck: 'ambassador',
             motdEnabled: false,
             motdInterval: 5,
-            motd: 'Temporary Message of the Day',
+            motd: "Temporary Message of the Day",
             filterChat: true,
             etaRestriction: false,
             welcome: true,
@@ -1138,7 +1138,7 @@
             if (typeof lastplay === 'undefined') return;
             if (basicBot.settings.songstats) {
                 if (typeof basicBot.chat.songstatistics === 'undefined') {
-                    API.sendChat('/me ' + lastplay.media.author + ' - ' + lastplay.media.title + ': ' + lastplay.score.positive + ' :metal: ' + lastplay.score.grabs + ' :purple_heart: ' + lastplay.score.negative + ' :shit: ')
+                    API.sendChat('/me ' + lastplay.media.author + ' - ' + lastplay.media.title + ': ' + lastplay.score.positive + " :metal: | " + lastplay.score.grabs + " :purple_heart: | " + lastplay.score.negative + " :shit: |")
                 } else {
                     API.sendChat(subChat(basicBot.chat.songstatistics, {
                         artist: lastplay.media.author,
@@ -1175,7 +1175,7 @@
             }, 2000);
             var newMedia = obj.media;
             var timeLimitSkip = setTimeout(function() {
-                if (basicBot.settings.timeGuard && newMedia.duration > basicBot.settings.maximumSongLength * 60 && !basicBot.room.roomevent) {
+                if (basicBot.settings.timeGuard && newMedia.duration > basicBot.settings.maximumSongLength * 60) {
                     var name = obj.dj.username;
                     API.sendChat(subChat(basicBot.chat.timelimit, {
                         name: name,
@@ -1488,7 +1488,7 @@
             },
             spam: [
                 'hueh', 'hu3', 'brbr', 'heu', 'brbrbr', 'spoder', 'mafia', 'zuera', 'zueira',
-                'zueria', 'aehoo', 'aheu', 'brazil', 'zoeira', 'fuckadmins', 'affff', 'hitler', 
+                'zueria', 'aehoo', 'aheu', 'brazil', 'zoeira', 'fuckadmins', 'affff', 'hitler', 'stalin',
 		'ashua', 'ahsu', 'ashau', 'lulz', 'huehue', 'hue', 'huehuehue', 'merda', 'puta', 'retarda', 'caralho', 'ppk',
                 'fuder', 'foder', 'hua', 'ahue', 'modafuka', 'modafoka', 'mudafuka', 'mudafoka', 'ooooooooooooooo', 'foda', 
 		'foda-se', 'cu', 'cú', 'pau', 'piroca', 'viado', 'vaca', 'vadia', 'piranha', 'fuck', 
@@ -2311,7 +2311,7 @@
             },
 
             commandsCommand: {
-                command: 'commands',
+                command: ['commands','comandos'],
                 rank: 'user',
                 type: 'exact',
                 functionality: function(chat, cmd) {
@@ -3090,7 +3090,7 @@
 				}
 			},
 		 sairppCommand: {
-				command: 'sair',
+				command: 'sairpp',
 				rank: 'user',
 				type: 'exact',
 				functionality: function (chat, cmd) {
