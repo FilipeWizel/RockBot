@@ -4,11 +4,12 @@
 
 ### Script de uso
 
-Crie um favorito no seu navegador com o nome RockBot, e no endereço (da página) cole o código abaixo: 
+Crie um favorito no seu navegador com o nome SadBotTr00, e no endereço (da página) cole o código abaixo: 
 
 ```
 javascript:(function(){$.getScript('https://rawgit.com/FilipeWizel/RockBot/master/sadbottr00.js');})();
 ```
+Para ativa-lo basta entrar na sala e ir aos seus favoritos e clicar na opção `SadBotTr00` 
 ### Comandos
 
 Veja a lista dos comandos do [basicBot](https://github.com/basicBot/source/blob/master/commands.md)
