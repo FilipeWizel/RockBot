@@ -2,7 +2,7 @@
 {
         "author": "Wizel",
         "colors": {
-            "background": "",
+            "background": "#400042",
             "chat": {
                 "admin": null,
                 "ambassador": null,
@@ -26,11 +26,11 @@
             "icons": {
                 "host":                 "#87449c",
                 "cohost":               "#87449c",
-                "manager":              "#7854a9",
+                "manager":              "#956bce",
                 "bouncer":              "#626cbc",
                 "residentdj":           "#547bc9"
             },
-            "playback": null
+            "playback": "http:\/\/ap.imagensbrasil.org\/images\/2017\/10\/31\/playbackplugdj.png"
         },
         "rules": {
             "allowAutojoin": "true",
