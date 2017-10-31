@@ -23,7 +23,12 @@
         var room = JSON.parse(localStorage.getItem('basicBotRoom'));
         window.location = 'https://plug.dj' + room.name;
     };*/
-
+    
+    
+    // Carrega plugcubed automaticamente no bot
+   $.getScript('https://plugcubed.net/scripts/release/plugCubed.min.js');
+    // $.getScript('https://plugcubed.net/scripts/release/plugCubed.js');
+    
     API.getWaitListPosition = function(id) {
         if (typeof id === 'undefined' || id === null) {
             id = API.getUser().id;
@@ -277,12 +282,12 @@
             startupCap: 1, // 1-200
             startupVolume: 0, // 0-100
             startupEmoji: false, // true or false
-            autowoot: true,
+            autowoot: false,
             autoskip: false,
             smartSkip: true,
             cmdDeletion: true,
             maximumAfk: 120,
-            afkRemoval: true,
+            afkRemoval: false,
             maximumDc: 60,
             bouncerPlus: true,
             blacklistEnabled: true,
@@ -293,13 +298,13 @@
             maximumCycletime: 10,
             voteSkip: false,
             voteSkipLimit: 10,
-            historySkip: false,
+            historySkip: true,
             timeGuard: true,
             maximumSongLength: 10,
             autodisable: false,
             automsg: true,
 			roletaInterval: 120,
-			autoroulette: true,
+			autoroulette: false,
 			roulettepos: 2,
             commandCooldown: 30,
             usercommandsEnabled: true,
@@ -1137,9 +1142,9 @@
             var lastplay = obj.lastPlay;
             if (typeof lastplay === 'undefined') return;
             if (basicBot.settings.songstats) {
-                if (typeof basicBot.chat.songstatistics === 'undefined') {
+               // if (typeof basicBot.chat.songstatistics === 'undefined') {
                     API.sendChat('/me ' + lastplay.media.author + ' - ' + lastplay.media.title + ': ' + lastplay.score.positive + " :metal: | " + lastplay.score.grabs + " :purple_heart: | " + lastplay.score.negative + " :shit: |")
-                } else {
+               /* } else {
                     API.sendChat(subChat(basicBot.chat.songstatistics, {
                         artist: lastplay.media.author,
                         title: lastplay.media.title,
@@ -1148,6 +1153,7 @@
                         mehs: lastplay.score.negative
                     }))
                 }
+                */
             }
             basicBot.room.roomstats.totalWoots += lastplay.score.positive;
             basicBot.room.roomstats.totalMehs += lastplay.score.negative;
@@ -4660,5 +4666,5 @@
     };
 
     loadChat(basicBot.startup);
-    // $.getScript("https://moveit-brasil.github.io/bot/entrada.js");
+
 }).call(this);
