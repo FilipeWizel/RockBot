@@ -1,6 +1,6 @@
 
+    Header set Access-Control-Allow-Origin "https://plug.dj"
 {
-    Header set Access-Control-Allow-Origin "https://plug.dj";
         "author": "",
         "colors": {
             "background": "",
