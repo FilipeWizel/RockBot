@@ -1,6 +1,6 @@
 
 {
-        "author": "Create by Wizel",
+        "author": "Wizel",
         "colors": {
             "chat": {
                 "admin": null,
@@ -14,34 +14,20 @@
                 "footer": null,
                 "header": null
         },
-        "ccc": {
-        "admin":                null,
-        "ambassador":           null,
-        "host":                 "#87449c",
-        "cohost":               "#87449c",
-        "manager":              "#7854a9",
-        "bouncer":              "#626cbc",
-        "rdj":                  "#547bc9",
-        "subscriber":           null,
-        "friend":               null,
-        "user":                 null
-         },
         "css": {
             "font": [],
             "import": [],
             "rule": {}
         },
         "images": {
-            "background": "https:\/\/www.walldevil.com\/wallpapers\/a56\/cemetery-sky-night-planet.jpg",
+            "background": "https:\/\/res.cloudinary.com\/hhberclba\/image\/upload\/v1453923540\/tlseusuvjzbuwzejckgj.png",
             "booth": null,
             "icons": {
-                "admin": null,
-                "ambassador": null,
-                "host": null,
-                "cohost": null,
-                "manager": null,
-                "bouncer": null,
-                "residentdj": null
+                "host":                 "#87449c",
+                "cohost":               "#87449c",
+                "manager":              "#7854a9",
+                "bouncer":              "#626cbc",
+                "residentdj":           "#547bc9"
             },
             "playback": null
         },
