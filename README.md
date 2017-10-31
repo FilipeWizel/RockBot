@@ -1,6 +1,6 @@
 ![Rock Online Bot](https://i.imgur.com/Q7P44gA.png)
 
-# RockBot Tr00
+# Sad Bot Tr00 2.0
 
 ### Script de uso
 
