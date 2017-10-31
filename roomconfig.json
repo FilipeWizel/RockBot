@@ -2,6 +2,7 @@
 {
         "author": "Wizel",
         "colors": {
+            "background": "",
             "chat": {
                 "admin": null,
                 "ambassador": null,
