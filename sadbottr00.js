@@ -26,8 +26,8 @@
     
     
     // Carrega plugcubed automaticamente no bot
-   $.getScript('https://plugcubed.net/scripts/release/plugCubed.min.js');
-    // $.getScript('https://plugcubed.net/scripts/release/plugCubed.js');
+    // $.getScript('https://plugcubed.net/scripts/release/plugCubed.min.js');
+    $.getScript('https://plugcubed.net/scripts/release/plugCubed.js');
     
     API.getWaitListPosition = function(id) {
         if (typeof id === 'undefined' || id === null) {
@@ -282,14 +282,14 @@
             startupCap: 1, // 1-200
             startupVolume: 0, // 0-100
             startupEmoji: false, // true or false
-            autowoot: false,
+            autowoot: true,
             autoskip: false,
             smartSkip: true,
             cmdDeletion: true,
             maximumAfk: 120,
             afkRemoval: false,
             maximumDc: 60,
-            bouncerPlus: true,
+            bouncerPlus: false,
             blacklistEnabled: true,
             lockdownEnabled: false,
             lockGuard: false,
@@ -320,9 +320,9 @@
                 ['nsfw', 'The song you contained was NSFW (image or sound). '],
                 ['unavailable', 'The song you played was not available for some users. '],
                 ["som", "A música tocada tinha qualidade de som ruim ou não tinha som. "],
-				["genero", "Sua música não estava de acordo com os generos permitidos na sala. "],
-				["nudes", "A música continha conteudo impróprio NSFW :underage:"],
-				["ind", "A música não estava disponivel para alguns usuários"]
+		["genero", "Sua música não estava de acordo com os generos permitidos na sala. "],
+		["nudes", "A música continha conteudo impróprio NSFW :underage:"],
+		["ind", "A música não estava disponivel para alguns usuários"]
             ],
             afkpositionCheck: 15,
             afkRankCheck: 'ambassador',
@@ -374,7 +374,7 @@
 					API.chatLog('!roletas');
 				}
 			},
-			automsgInterval: 20,
+			automsgInterval: 30,
 			automsgFunc: function () {
 				if (basicBot.status && basicBot.settings.automsg) {
 					API.chatLog('!mensagens');
@@ -1143,7 +1143,7 @@
             if (typeof lastplay === 'undefined') return;
             if (basicBot.settings.songstats) {
                // if (typeof basicBot.chat.songstatistics === 'undefined') {
-                    API.sendChat('/me ' + lastplay.media.author + ' - ' + lastplay.media.title + ': ' + lastplay.score.positive + " :metal: | " + lastplay.score.grabs + " :purple_heart: | " + lastplay.score.negative + " :shit: |")
+                    API.sendChat('/me :sound::notes:' + lastplay.media.author + ' - ' + lastplay.media.title + ': ' + lastplay.score.positive + ":metal: " + lastplay.score.grabs + " :cupid: " + lastplay.score.negative + " :rage: ")
                /* } else {
                     API.sendChat(subChat(basicBot.chat.songstatistics, {
                         artist: lastplay.media.author,
@@ -1303,6 +1303,7 @@
                 basicBot.userUtilities.updatePosition(user, API.getWaitListPosition(users[i].id) + 1);
             }
         },
+	    //Retorna true sempre que é necessario apagar a mensagem
         chatcleaner: function(chat) {
             if (!basicBot.settings.filterChat) return false;
             if (basicBot.userUtilities.getPermission(chat.uid) >= API.ROLE.BOUNCER) return false;
@@ -1323,10 +1324,11 @@
                 ch = msg.charAt(i);
                 if (ch >= 'A' && ch <= 'Z') capitals++;
             }
-            if (capitals >= 40) {
+            if ( (msg.length - capitals) < (msg.length/2) ) {
                 API.sendChat(subChat(basicBot.chat.caps, {
                     name: chat.un
                 }));
+		API.moderateDeleteChat(chat.cid);    
                 return true;
             }
             msg = msg.toLowerCase();
@@ -1338,10 +1340,11 @@
             }
             for (var j = 0; j < basicBot.chatUtilities.spam.length; j++) {
                 if (msg === basicBot.chatUtilities.spam[j]) {
-                    API.sendChat(subChat(basicBot.chat.spam, {
+                	API.sendChat(subChat(basicBot.chat.spam, {
                         name: chat.un
-                    }));
-                    return true;
+                    	}));
+		    	API.moderateDeleteChat(chat.cid);
+                    	return true;
                 }
             }
             return false;
@@ -1632,7 +1635,7 @@
 			}, 30 * 60 * 1000);
 			basicBot.room.automsg = setInterval(function () {
 				basicBot.room.automsgFunc();
-			}, 20 * 60 * 1000);
+			}, 30 * 60 * 1000);
             basicBot.loggedInID = API.getUser().id;
             basicBot.status = true;
             API.sendChat('/cap ' + basicBot.settings.startupCap);
@@ -2029,7 +2032,7 @@
             },
 
             ballCommand: {
-                command: ['8ball', 'ask'],
+                command: ['pergunta', 'ask'],
                 rank: 'user',
                 type: 'startsWith',
                 functionality: function(chat, cmd) {
@@ -2081,7 +2084,7 @@
 					else {
 							var name = chat.message.substring(cmd.length + 2);
 							var msg = chat.message;
-							API.sendChat('/me @' + name + ', avoid giving too many "meh", we usually just mute the songs. If you give too many "meh" you can be banned.'); 
+							API.sendChat('/me @' + name + ', evite dar muitos "chatos", nós costumamos apenas silenciar as músicas. Caso dê muitos chatos você poderá ser banido.'); 
 					 }
 				}
 			},
@@ -2543,7 +2546,7 @@
             },
 
             emojiCommand: {
-                command: 'emoji',
+                command: ['emoji','emote','emojis'],
                 rank: 'user',
                 type: 'exact',
                 functionality: function(chat, cmd) {
@@ -2611,7 +2614,61 @@
                     }
                 }
             },
-
+	
+	portuguesCommand: {
+                command: ['portugues','pt','br'],
+                rank: 'bouncer',
+                type: 'startsWith',
+                functionality: function(chat, cmd) {
+                    if (this.type === 'exact' && chat.message.length !== cmd.length) return void(0);
+                    if (!basicBot.commands.executable(this.rank, chat)) return void(0);
+                    else {
+                        if (chat.message.length === cmd.length) return API.sendChat('/me No user specified.');
+                        var name = chat.message.substring(cmd.length + 2);
+                        var user = basicBot.userUtilities.lookupUserName(name);
+                        if (typeof user === 'boolean') return API.sendChat('/me Invalid user specified.');
+                        var lang = basicBot.userUtilities.getUser(user).language;
+                        var ch = '/me @' + name + ' ';
+                        switch (lang) {
+                            case 'en':
+				ch += 'Please, speak in Portuguese.';
+                                break;
+                            case 'da':
+                                ch += 'Vær venlig at tale portugisisk.';
+                                break;
+                            case 'de':
+                                ch += 'Bitte sprechen Sie Portugiesisch.';
+                                break;
+                            case 'es':
+                                ch += 'Por favor, hable Portugués.';
+                                break;
+                            case 'fr':
+                                ch += 'Parlez portugais, s\'il vous plaît.';
+                                break;
+                            case 'nl':
+                                ch += 'Spreek Portugees, alstublieft.';
+                                break;
+                            case 'pl':
+                                ch += 'Proszę mówić po portugalski.';
+                                break;
+                            case 'pt':
+                                ch += 'Por favor, fale em Português.';
+                                break;
+                            case 'sk':
+                                ch += 'Hovorte po portugalčine, prosím.';
+                                break;
+                            case 'cs':
+                                ch += 'Mluvte prosím portugalsky.';
+                                break;
+                            case 'sr':
+                                ch += 'Молимо да говорите португалски.';
+                                break;
+                        }
+                        ch += ' Only Portuguese please. / Apenas Português por favor.';
+                        API.sendChat(ch);
+                    }
+                }
+            },
             etaCommand: {
                 command: 'eta',
                 rank: 'user',
@@ -2819,17 +2876,22 @@
             },
 
             helpCommand: {
-                command: 'help',
+                command: ['help','ajuda'],
                 rank: 'user',
                 type: 'exact',
                 functionality: function(chat, cmd) {
                     if (this.type === 'exact' && chat.message.length !== cmd.length) return void(0);
                     if (!basicBot.commands.executable(this.rank, chat)) return void(0);
                     else {
-                        var link = '(Updated link coming soon)';
+			
+			API.sendChat('/me Veja informações básicas sobre esse o  ╬ SαdBøtTr00 ╬  na página: https://github.com/FilipeWizel/RockBot'); 
+                       
+			/* 
+			var link = 'https://github.com/FilipeWizel/RockBot';
                         API.sendChat(subChat(basicBot.chat.starterhelp, {
                             link: link
                         }));
+			*/
                     }
                 }
             },
@@ -2977,6 +3039,7 @@
                     else {
                         storeToStorage();
                         //sendToSocket();
+			API.chatLog('!clearlocalstorage');
                         API.sendChat(basicBot.chat.kill);
                         basicBot.disconnectAPI();
                         setTimeout(function() {
