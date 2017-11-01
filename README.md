@@ -34,4 +34,4 @@ javascript:(function(){$.getScript('https://rawgit.com/cicerojr10/source/master/
 | ---------------------- | ----------------- |
 |.,¸¸,✩☽∂ลяƙ†Åทǥєℓ☾✩,¸¸,.| Ter influenciado diretamente na criação desse projeto e ter motivado extremamente sua conclusão. |
 | Gunner | Ter criado a primeira versão do Bot, que já atendia as necessidades da sala. |
-| BasicBot | Ter liberado gratuitamente seu código, pois sem isso não seria possével criar o nosso bot. |
+| BasicBot | Ter liberado gratuitamente seu código, pois sem isso não seria possível criar o nosso bot. |
