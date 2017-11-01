@@ -13,7 +13,7 @@ Em caso de dúvidas sobre como criar o favorito, leia as instruções abaixo.
 
 ***Criar favorito no Chrome:***
 > No canto superior direito, clique em **opções** ![](https://storage.googleapis.com/support-kms-prod/5C6FB52C8BBB2C12DC89B5F42F16B9B5E9CF) e depois -> **Favoritos**, depois -> **Gerenciador de favoritos**.
->>Clique com o **botão direito** sobre a página e selecione a opção **adicionar página**
+>Clique com o **botão direito** sobre a página e selecione a opção **adicionar página**
 
 ***Criar favorito no Mozilla Firefox***
 > Use o atalho `Ctrl + Shift + O`, depois clique com **botão direito** sobre a página que abrirá e selecione a opção **Criar Favorito...**
