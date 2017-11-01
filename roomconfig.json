@@ -1,19 +1,20 @@
 
 {
-        "author": "Wizel",
+        
+        "room":         "✝ Rock Metal Online ✝", 
+        "author":       "Wizel",
         "colors": {
             "background": "#400042",
             "chat": {
-                "admin": null,
-                "ambassador": null,
-                "host": null,
-                "cohost": null,
-                "manager": null,
-                "bouncer": null,
-                "residentdj": null
+                "host":                 "#87449c",
+                "cohost":               "#87449c",
+                "manager":              "#956bce",
+                "bouncer":              "#626cbc",
+                "residentdj":           "#547bc9"
+
             },
-                "footer": null,
-                "header": null
+            "footer": null,
+            "header": null
         },
         "css": {
             "font": [],
@@ -24,11 +25,13 @@
             "background": "https:\/\/res.cloudinary.com\/hhberclba\/image\/upload\/v1453923540\/tlseusuvjzbuwzejckgj.png",
             "booth": null,
             "icons": {
-                "host":                 "#87449c",
-                "cohost":               "#87449c",
-                "manager":              "#956bce",
-                "bouncer":              "#626cbc",
-                "residentdj":           "#547bc9"
+                "admin": null,
+                "ambassador": null,
+                "host": "https:\/\/image.flaticon.com\/icons\/svg\/272\/272848.svg",
+                "cohost": null,
+                "manager": null,
+                "bouncer": null,
+                "residentdj": null
             },
             "playback": "http:\/\/ap.imagensbrasil.org\/images\/2017\/10\/31\/playbackplugdj.png"
         },
