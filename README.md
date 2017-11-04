@@ -32,7 +32,7 @@ Recomendo que use a seguinte sequência de comandos ao iniciar ele:
 
 4 - `!status` para ver as configurações básicas atuais do bot.
 
-5 - Configure o manualmente plugcubed mini na página do bot: 
+5 - Configure o manualmente PlugCubed na página do bot: 
   - Ative o auto woot
   - Ative a resposta automática AFK e configure ela para: `Olá, eu sou o  ╬ SαdBøtTr00 ╬  e estou aqui para ajuda-lo. Digite !comandos e veja os comandos que eu atendo :D`
   
@@ -41,7 +41,7 @@ Recomendo que use a seguinte sequência de comandos ao iniciar ele:
   - Abra as configurações.
   - Desmarque todas as opções.
 
-Recomento seguir todos os passos na primeira ativação, e após repita apenas o passo 4 caso todo o resto já esteja configurado.
+Recomendo seguir todos os passos na primeira ativação, e nas ativações seguintes repita apenas o passo 4, caso todo o resto já esteja configurado.
 
 Em casos de atualização do código, limpe o cache do navegador e repita todo o processo.
 
@@ -56,7 +56,9 @@ Veja também a lista de comandos em português oficial do [SadBotTr00](https://g
 
 ## Situação Atual
 
-O bot está pronto para uso, porém ainda pode apresentar pequenas falhas.
+O bot está pronto para uso.
+
+Versão atual: 2.0 Estável. 
 
 Em caso de problemas, favor entrar em contado com **Wizel** (wizel@metalfan.com).
 
@@ -68,7 +70,7 @@ javascript:(function(){$.getScript('https://rawgit.com/cicerojr10/source/master/
 
 ## Agradecimentos
 
-|  Agradeço à | Por.. |
+|  Agradeço à | Por... |
 | ---------------------- | ----------------- |
 |.,¸¸,✩☽∂ลяƙ†Åทǥєℓ☾✩,¸¸,.| Ter influenciado diretamente na criação desse projeto e ter motivado extremamente sua conclusão. |
 | Gunner | Ter criado a primeira versão do Bot, que já atendia as necessidades da sala. |
