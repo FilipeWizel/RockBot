@@ -52,7 +52,7 @@ Realizar esse processo 1 ou 2 vezes por semana permite deixar seu bot (e navegad
 
 Veja a lista dos comandos do [basicBot](https://github.com/basicBot/source/blob/master/commands.md).
 
-Veja também a lista de comandos em português oficial do [SadBotTr00](https://drive.google.com/open?id=0B_JV8EoJAkq-NUtIYU9EeGxab2c).
+Veja também a lista de comandos em português oficial do [SadBotTr00](https://github.com/FilipeWizel/RockBot/blob/master/comandos.md).
 
 ## Situação Atual
 
