@@ -11,7 +11,7 @@
 | !clearchat | — | limpa o chat no navegador do bot. |
 | !clearlocalstorage | — | limpa os dados do bot do navegador. |
 | !cycle | — | muda o ciclo de DJs. |
-| !cycletimer | X | Defina o tempo máximo de ciclo de DJ para quando o cicloguard está habilitado. |
+| !cycletimer | X | define o tempo máximo de ciclo de DJ para quando o cicloguard está habilitado. |
 | !language | (nome do idioma em inglês) | especifica o idioma que você gostaria que o bot usasse. |
 | !locktimer | X | define o tempo máximo em que a lista de espera pode ser bloqueada se o bloqueio estiver ativado. |
 | !logout | — | desloga o bot da conta no plug.dj. |
@@ -60,13 +60,12 @@
 | !mute | @user/(X) | mude o usuário, por X minutos se X for especificado, caso contrário por um período indefinido. |
 | !reload | — | reinicia o bot. |
 | !sessionstats | — | mostra as estatísticas da sessão atual. |
-| !skip / !smartskip | (razão) | Pula a música e move o dj para a posição 1 (a posição pode ser definida com lockskippos !)
-(motivo) as razões  estão definidas abaixo, utilizar a primeira palavra em negrito após o comando (ex.: `!skip som`).
-**history** ”Sua música estava no histórico da sala.”
-**som** "A música tocada tinha qualidade de som ruim ou não tinha som."
-**genero** "Sua música não estava de acordo com os gêneros permitidos pela sala."
-**nudes** "A música continha conteúdo impróprio NSFW :underage:"
-**ind** "A música não estava disponível para alguns usuários." |
+| !skip / !smartskip | (razão) | Pula a música e move o dj para a posição 1 (a posição pode ser definida com lockskippos !)(motivo) as razões  estão definidas abaixo, utilizar a primeira palavra em negrito após o comando (ex.: `!skip som`).
+||| **history** ”Sua música estava no histórico da sala.” |
+||| **som** "A música tocada tinha qualidade de som ruim ou não tinha som." |
+||| **genero** "Sua música não estava de acordo com os gêneros permitidos pela sala." |
+||| **nudes** "A música continha conteúdo impróprio NSFW :underage:" |
+||| **ind** "A música não estava disponível para alguns usuários." |
 | !status | — | mostra as configurações básicas do bot. |
 | !timeguard | — | modifica o timeguard. |
 | !togglebl | — | modifica a blacklist. |
